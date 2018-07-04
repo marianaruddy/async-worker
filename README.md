@@ -37,7 +37,7 @@ Se o handler rodar sem erros, a mensagem é automaticamente confirmada (ack).
 ### 0.1.0 para 0.2.0
 
 Na versão `0.2.0` criamos a possibilidade de receber mensagens em lote. E a partir dessa versão
-a assinatura do handler mudo para:
+a assinatura do handler muda para:
 
 ```python
 from asyncworker.rabbitmq.message import Message
@@ -47,7 +47,7 @@ async def handler(messages: List[Message]):
 ```
 
 As instâncias do objeto `asyncworker.rabbitmq.RabbitMQMessage` já vêm por padrão configurado para receber `ack()` 
-depois queo handler retornar (sem exception), mas o handler pode mudar isso
+depois que o handler retornar (sem exception), mas o handler pode mudar isso
 chamando o método `message.reject()` para cada mensagem que precisar ser devolvida para a fila.
 
 O conteúdo da mensagem original está agora no atributo `message.body`. Então um handler antigo que era assim:
